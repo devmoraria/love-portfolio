@@ -131,6 +131,4 @@ Criar uma experiência interativa e visualmente agradável utilizando apenas tec
 
 ## 👨‍💻 Autor
 
-**devmoraria**
-
 Code crafted with love devmoraria 💜
