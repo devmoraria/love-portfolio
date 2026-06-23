@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nosso Portfólio de Amor - Projeto de Dia dos Namorados</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <div class="splash-hearts">💜</div>
+            <h1 class="splash-title">Para o Meu Amor</h1>
+            <p class="splash-subtitle">Preparei algo especial pra você...</p>
+            <button class="splash-btn" id="splashBtn">
+                <span>Abrir com amor</span>
+                <span class="splash-btn-icon">▶</span>
+            </button>
+            <p class="splash-hint">com música 🎵</p>
+        </div>
+    </div>
+
+    <div class="music-player" id="musicPlayer">
+        <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Tocar / Pausar música">
+            <span class="music-icon" id="musicIcon">▶</span>
+        </button>
+        <div class="music-info">
+            <span class="music-title">Clairo x Indie - Bedroom Pop (Lofi Beat)</span>
+            <span class="music-artist">Instrumental No Copyright</span>
+        </div>
+        <div class="music-wave" id="musicWave">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <audio id="bgMusic" loop>
+            <source src="clairo-lofi-beat.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <canvas id="heartsCanvas"></canvas>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img id="lightboxImg" src="" alt="Foto expandida">
+    </div>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Feliz Dia dos Namorados!</h1>
+            <p class="subtitle">Eu mais que te amo.</p>
+        </div>
+    </header>
+
+    <section class="container counter-section">
+        <h2>Contando cada segundo ao seu lado...</h2>
+        <div class="countdown-container">
+            <div class="time-box"><span id="days">00</span><p>Dias</p></div>
+            <div class="time-box"><span id="hours">00</span><p>Horas</p></div>
+            <div class="time-box"><span id="minutes">00</span><p>Minutos</p></div>
+            <div class="time-box"><span id="seconds">00</span><p>Segundos</p></div>
+        </div>
+    </section>
+
+    <section class="container carousel-section">
+        <h2>Nossos Momentos ✨</h2>
+        <p class="section-subtitle">Alguns dos melhores registros ao seu lado (substituídos por placeholders genéricos para o portfólio)</p>
+        
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <img src="casal.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)">
+                    <div class="carousel-caption">Obrigado por ser tão incrível.</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="casal1.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)">
+                    <div class="carousel-caption">Aqui estão nossos momentos mais sinceros.</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="casal2.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)">
+                    <div class="carousel-caption">Cada instante com você se torna inesquecível, até os mais bobos, sabia?</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="casal3.webp" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)">
+                    <div class="carousel-caption">Nossa primeira foto juntos KKKKKKK.</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="casal4.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)">
+                    <div class="carousel-caption">Obrigado por estar comigo desde o ultimo dia 12.</div>
+                </div>
+            </div>
+            
+            <button class="carousel-btn prev-btn" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="container timeline">
+        <h2>Nossa História de Amor Muehehehe 📝</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">00/09/2024</div>
+            <div class="timeline-content">
+                <h3>Nosso Primeiro Beijo</h3>
+                <p>O momento exato em que percebi estar enamorado em você, tá.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">00/09/2025</div>
+            <div class="timeline-content">
+                <h3>O "Sim" mais fofo que ja escutei vindo de ti</h3>
+                <p>Quando decidimos finalnalmente tornar de forma oficial, segurando firme a mão um do outro.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Hoje</div>
+            <div class="timeline-content">
+                <h3>E ontem, foi mais um Dia dos Namorados</h3>
+                <p>Mesmo com toda a correria da rotina e cansaço, você sempre é o meu porto seguro e o meu melhor destino.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container interactive-section">
+        <h2>Um clique de carinho</h2>
+        <p>Clique no botão abaixo para ler algo que sinto por você.</p>
+        <button id="loveBtn">Revelar Sentimento 💜</button>
+        <p id="loveMessage" class="hidden"></p>
+    </section>
+
+    <section class="marquee-section">
+        <h2>Nossa Galeria Infinita 📸</h2>
+        <p class="section-subtitle">Momentos que se repetem infinitamente no meu coração (com placeholders)</p>
+        
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <div class="marquee-item"><img src="casal.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal1.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal2.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal3.webp" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal4.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal5.webp" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+               
+                <div class="marquee-item"><img src="casal.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal1.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal2.jpg" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal3.webp" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+                <div class="marquee-item"><img src="casal5.webp" alt="[IMAGEM GÊNÉRICA - PORTFÓLIO]" onclick="abrirLightbox(this.src)"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container cosmos-section">
+        <h2>Curiosidades do Nosso Universo, que duvido que você saiba 🌌</h2>
+        <p class="section-subtitle">O cenário exato do céu e da lua no momento em que nossa história começou.</p>
+        
+        <div class="cosmos-split-container">
+            <div class="cosmos-element-box">
+                <h3>A Lua daquela dia</h3>
+                <p class="cosmos-mini-text">00 de Setembro de 2025</p>
+                <div class="moon-display-wrapper">
+                    <div class="vector-moon crescent"></div>
+                </div>
+                <p class="cosmos-caption-text">Lua Minguante Iluminada</p>
+            </div>
+
+            <div class="cosmos-element-box">
+                <h3>O Céu do Nosso Primeiro Beijo</h3>
+                <p class="cosmos-mini-text">As estrelas reais acima de nós</p>
+                <div class="stars-display-wrapper">
+                    <div class="star-cluster">
+                        <div class="constellation-line"></div>
+                        <span class="vector-star" style="top: 20%; left: 30%; width: 3px; height: 3px;"></span>
+                        <span class="vector-star" style="top: 25%; left: 45%; width: 2px; height: 2px; opacity: 0.7;"></span>
+                        <span class="vector-star" style="top: 40%; left: 25%; width: 4px; height: 4px;"></span>
+                        <span class="vector-star" style="top: 55%; left: 50%; width: 2px; height: 2px;"></span>
+                        <span class="vector-star" style="top: 70%; left: 35%; width: 3px; height: 3px; opacity: 0.9;"></span>
+                        <span class="vector-star" style="top: 15%; left: 75%; width: 2px; height: 2px;"></span>
+                        <span class="vector-star" style="top: 45%; left: 80%; width: 3px; height: 3px;"></span>
+                        <span class="vector-star" style="top: 80%; left: 15%; width: 2px; height: 2px;"></span>
+                        <span class="vector-star" style="top: 85%; left: 65%; width: 2px; height: 2px; opacity: 0.5;"></span>
+                    </div>
+                </div>
+                <p class="cosmos-caption-text">Hemisfério Sul • São Paulo</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container letter-section">
+        <h2>Uma Carta Para Você </h2>
+        <p class="section-subtitle">Tudo que eu queria te dizer, em palavras</p>
+
+        <div class="letter-content">
+            <p>Feliz Dia dos Namorados! </p>
+
+            <p>Neste dia tão especial, é impossível não refletir sobre o sentimento que nos une. O amor é uma força poderosa e transformadora, e celebrá-lo é essencial. </p>
+
+            <p>Que esta data seja repleta de alegria, companheirismo e momentos inesquecíveis. Que a nossa conexão continue crescendo e se fortalecendo a cada dia.</p>
+
+            <p>Aproveite cada instante e saiba que este sentimento é o que torna tudo mais bonito. Parabéns para nós!</p>
+
+            <p class="letter-signature">Com amor,</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Feito com todo o amor do mundo por eu mesmo, pra você... 😉</p>
+        <p class="code-footer"><code>Code crafted with love devmoraria &lt;3</code></p>
+    </footer>
+
+    <script>
+        // ================================================================
+        // CONTADOR ALEATORIO
+        // ================================================================
+        const dataInicio = new Date(2024, 8, 29, 21, 0, 0);
+
+        function atualizarContador() {
+            const agora = new Date();
+            const diferenca = agora - dataInicio;
+            const dias     = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas    = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos= Math.floor((diferenca % (1000 * 60)) / 1000);
+            document.getElementById('days').textContent    = String(dias).padStart(2, '0');
+            document.getElementById('hours').textContent   = String(horas).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutos).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(segundos).padStart(2, '0');
+        }
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
+
+        // ================================================================
+        // CARROSSEL
+        // ================================================================
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function mudarSlide(n) {
+            if (slides.length === 0) return;
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+        setInterval(() => mudarSlide(1), 5000);
+
+        // ================================================================
+        // CARTA — fade-in dos parágrafos ao rolar
+        // ================================================================
+        const letterParagraphs = document.querySelectorAll('.letter-content p');
+        const letterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        letterParagraphs.forEach(p => letterObserver.observe(p));
+
+        // ================================================================
+        // LIGHTBOX (FOTO EXPANDIDA)
+        // ================================================================
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        function abrirLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('ativo');
+        }
+
+        function fecharLightbox() {
+            lightbox.classList.remove('ativo');
+        }
+
+        lightboxClose.addEventListener('click', fecharLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) fecharLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') fecharLightbox();
+        });
+
+        // ================================================================
+        // BOTÃO SURPRESA + CHUVA DE CORAÇÕES
+        // ================================================================
+        const mensagens = [
+            "Você é o meu porto seguro em meio a qualquer tempestade. ",
+            "Amo a calmaria que você traz para a minha mente e a energia que dá pro meu coração. 💙",
+            "Obrigado por ser tão compreensiva e torcer tanto por mim. Você é única! ",
+            "Meu lugar favorito no world inteiro é dentro do seu abraço. 💜",
+            "Você é a linha mais perfeita que a vida escreveu no meu destino.",
+            "Cada dia ao seu lado parece um presente que não mereci mas vou guardar pra sempre.",
+            "Você me faz querer ser melhor em tudo — no trabalho, nos sonhos e no amor. ✨",
+            "Eu desenho o seu nome com giz na parede do meu coração todo dia.",
+            "Obrigado por cada mensagem, cada olhar e cada momento de silêncio ao seu lado. 🤍",
+            "A melhor decisão que tomei foi não ter medo de te amar. 💜"
+        ];
+
+        const btn = document.getElementById('loveBtn');
+        const msgTxt = document.getElementById('loveMessage');
+
+        btn.addEventListener('click', () => {
+            const fraseAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+            msgTxt.textContent = fraseAleatoria;
+            msgTxt.classList.remove('hidden');
+            msgTxt.classList.remove('fade-in');
+            void msgTxt.offsetWidth;
+            msgTxt.classList.add('fade-in');
+            lancarCoracoes();
+        });
+
+        // ================================================================
+        // CHUVA DE CORAÇÕES — Canvas
+        // ================================================================
+        const canvas = document.getElementById('heartsCanvas');
+        const ctx = canvas.getContext('2d');
+        let coracoes = [];
+        let animando = false;
+
+        function redimensionarCanvas() {
+            canvas.width  = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        redimensionarCanvas();
+        window.addEventListener('resize', redimensionarCanvas);
+
+        function criarCoracao() {
+            return {
+                x: Math.random() * canvas.width,
+                y: -30,
+                tamanho: Math.random() * 18 + 10,
+                velocidade: Math.random() * 2.5 + 1.5,
+                oscilacao: Math.random() * 2 - 1,
+                fase: Math.random() * Math.PI * 2,
+                opacidade: Math.random() * 0.5 + 0.5,
+                cor: ['#c084fc', '#a855f7', '#ec4899', '#f472b6', '#ff6b9d'][Math.floor(Math.random() * 5)]
+            };
+        }
+
+        function desenharCoracao(c) {
+            ctx.save();
+            ctx.globalAlpha = c.opacidade;
+            ctx.fillStyle = c.cor;
+            ctx.translate(c.x, c.y);
+            const s = c.tamanho / 10;
+            ctx.scale(s, s);
+            ctx.beginPath();
+            ctx.moveTo(0, -3);
+            ctx.bezierCurveTo(5, -8, 10, -3, 0, 5);
+            ctx.bezierCurveTo(-10, -3, -5, -8, 0, -3);
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function animarCoracoes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            coracoes.forEach((c) => {
+                c.y += c.velocidade;
+                c.x += Math.sin(c.fase + c.y * 0.02) * c.oscilacao;
+                c.opacidade -= 0.003;
+                desenharCoracao(c);
+            });
+            coracoes = coracoes.filter(c => c.opacidade > 0 && c.y < canvas.height + 30);
+            if (coracoes.length > 0) {
+                requestAnimationFrame(animarCoracoes);
+            } else {
+                animando = false;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        function lancarCoracoes() {
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => coracoes.push(criarCoracao()), i * 30);
+            }
+            if (!animando) {
+                animando = true;
+                animarCoracoes();
+            }
+        }
+
+        // ================================================================
+        // PLAYER DE MÚSICA
+        // ================================================================
+        const audio     = document.getElementById('bgMusic');
+        const musicBtn  = document.getElementById('musicBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicWave = document.getElementById('musicWave');
+        let tocando = false;
+
+        function toggleMusic() {
+            if (tocando) {
+                audio.pause();
+                musicIcon.textContent = '▶';
+                musicWave.classList.remove('ativo');
+                tocando = false;
+            } else {
+                audio.play().then(() => {
+                    musicIcon.textContent = '❚❚';
+                    musicWave.classList.add('ativo');
+                    tocando = true;
+                }).catch(() => {});
+            }
+        }
+
+        // ================================================================
+        // TELA DE ENTRADA — resolve bloqueio de autoplay
+        // ================================================================
+        const splashScreen = document.getElementById('splashScreen');
+        const splashBtn    = document.getElementById('splashBtn');
+
+        splashBtn.addEventListener('click', () => {
+            audio.volume = 0.4;
+            audio.play().then(() => {
+                musicIcon.textContent = '❚❚';
+                musicWave.classList.add('ativo');
+                tocando = true;
+            }).catch(err => console.log('Áudio bloqueado:', err));
+
+            splashScreen.classList.add('saindo');
+            setTimeout(() => { splashScreen.style.display = 'none'; }, 800);
+        });
+    </script>
+</body>
+</html>
