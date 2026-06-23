@@ -117,7 +117,6 @@ Ou utilize a extensão **Live Server** do VS Code.
 ├── index.html
 ├── style.css
 ├── favicon.png
-├── hero-bg.jpg
 ├── clairo-lofi-beat.mp3
 └── README.md
 ```
