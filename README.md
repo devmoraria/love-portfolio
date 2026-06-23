@@ -134,4 +134,4 @@ Criar uma experiência interativa e visualmente agradável utilizando apenas tec
 
 **devmoraria**
 
-Code crafted with love 💜7
+Code crafted with love devmoraria 💜
